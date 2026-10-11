@@ -2,7 +2,7 @@
 from dotenv import load_dotenv
 import anthropic
 
-load_dotenv()
+load_dotenv(override=True)  # .env wins over any ANTHROPIC_API_KEY already in the shell
 client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY from .env
 
 msg = client.messages.create(
